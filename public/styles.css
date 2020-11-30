@@ -1,0 +1,155 @@
+nav {
+  background-color: #33ccff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e6f9ff;
+}
+
+.margin {
+  margin-top: 0.3%;
+  margin-bottom: 0.3%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.logo-img {
+  width: 6rem;
+}
+
+.footer {
+  text-align: center;
+  background-color: #33ccff;
+  color: white;
+  border-top: 5px solid #e6f9ff;
+  padding: 1rem;
+}
+
+.carousel-item img {
+  width: 100%;
+}
+
+.aside {
+  background-color: #33ccff;
+  padding: 0.5rem;
+  padding: 0;
+}
+
+.aside h1 {
+  font-size: 200%;
+}
+
+.aside ul li {
+  list-style: none;
+}
+
+.aside li a {
+  text-decoration: none;
+  color: white;
+  font-size: 150%;
+}
+
+.aside li a:hover {
+  color: black;
+}
+
+.card {
+  margin: 5% 1%;
+}
+
+.card img {
+  align-self: center;
+  width: 15rem;
+  margin-top: 5%;
+}
+
+.card button {
+  margin: 0 2%;
+}
+
+.about {
+  background: linear-gradient(to bottom, #33ccff 0%, #e6f9ff 100%);
+  height: 100vh;
+}
+
+.about-header {
+  text-align: center;
+  color: white;
+}
+
+.description {
+  color: white;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  margin: 1% 2%;
+}
+
+.about-card {
+  background-color: #66d9ff;
+  margin: 3% 0;
+  align-items: center;
+  padding: 1%;
+  border-radius: 1rem;
+}
+
+.about-card p {
+  color: white;
+  line-height: 1.5;
+}
+
+.about-card img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 100%;
+}
+
+.about-content {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.companies-header, .workers-header {
+  color: #000;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.company-title {
+  text-align: center;
+}
+
+.company-image {
+  width: 100%;
+  max-width: 12.5rem;
+  height: 9.37rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .sidebar {
+    position: sticky;
+    top: 10%;
+    left: 0;
+  }
+
+  .card {
+    margin: 3% 1%;
+  }
+
+  .about-card {
+    margin: 3% 6%;
+  }
+
+  .about-content {
+    margin: 3% 6%;
+  }
+
+  .company-margin {
+    margin-bottom: 3%;
+  }
+}

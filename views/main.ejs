@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 aside">
+      <div class="sidebar">
+        <h1>Xidmətlərimiz</h1>
+        <ul>
+          <li><a href="#">Temir</a></li>
+          <li><a href="#">Tikinti</a></li>
+          <li><a href="#">Tender verilmesi</a></li>
+          <li><a href="#">Avadanliq kirayesi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="row"><div class="col"><h1>Temir</h1></div></div>
+        <div class="row">
+          <%Items.forEach((item, i) => {%>
+            <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+          <%});%>
+        </div>
+    </div>
+  </div>
+
+  </div>
