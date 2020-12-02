@@ -28,6 +28,10 @@ body {
   color: white;
   border-top: 5px solid #e6f9ff;
   padding: 1rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .carousel-item img {
@@ -130,6 +134,108 @@ body {
   height: 9.37rem;
 }
 
+.contact-block, .we-contact-block {
+  background-color: white;
+  border-radius: 2rem;
+  margin: 6% 15%;
+  padding: 3%;
+  box-shadow: 1px 1px 3px #33ccff;
+}
+
+.we-contact-block h1 {
+  text-align: center;
+}
+
+.contact-block {
+  text-align: center;
+}
+
+.arrow {
+  text-align: center;
+}
+
+.arrow p {
+  font-size: 2rem;
+}
+
+.form-row {
+  margin: 3% auto;
+}
+
+.portofolio-block {
+  margin: 5% 15%;
+  background-color: #fff;
+  padding: 3%;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.portofolio-block img {
+  width: 100%;
+  max-width: inherit;
+  opacity: 1;
+}
+
+.portofolio-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #010203;
+  color: white;
+  padding: 3% 5%;
+  opacity: 0;
+  text-align: center;
+  max-width: 80%;
+}
+
+.portofolio-block:hover img {
+  animation: opacity 1s ease forwards;
+}
+
+.portofolio-block:hover .portofolio-text {
+  animation: text-appear 1s ease forwards;
+}
+
+.portofolio-text:hover {
+  animation: to-click 1s ease forwards;
+}
+
+.portofolio-headers {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.job-block {
+  margin: 5% 12%;
+}
+
+.job-block img {
+  width: 100%;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes text-appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes to-click {
+  to {
+    background-color: #33ccff;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .sidebar {
     position: sticky;
@@ -151,5 +257,9 @@ body {
 
   .company-margin {
     margin-bottom: 3%;
+  }
+
+  .portofolio-headers h6 {
+    visibility: hidden;
   }
 }

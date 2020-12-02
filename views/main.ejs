@@ -12,12 +12,31 @@
       </div>
     </div>
     <div class="col-lg-9">
-      <div class="row"><div class="col"><h1>Temir</h1></div></div>
-        <div class="row">
-          <%Items.forEach((item, i) => {%>
-            <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
-          <%});%>
-        </div>
+      <div id="temir">
+        <div class="row"><div class="col"><h1>Temir</h1></div></div>
+          <div class="row">
+            <%Items.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+            <%});%>
+          </div>
+      </div>
+      <div id="tikinti">
+        <div class="row"><div class="col"><h1>Tikinti</h1></div></div>
+          <div class="row">
+            <%Items.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+            <%});%>
+          </div>
+      </div>
+      <div id="tender">
+        <div class="row"><div class="col"><h1>Tender</h1></div></div>
+          <div class="row">
+            <%Items.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+            <%});%>
+          </div>
+      </div>
+
     </div>
   </div>
 

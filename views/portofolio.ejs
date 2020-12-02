@@ -1,0 +1,13 @@
+<%- include('header');-%>
+<div class="portofolio-headers">
+  <h1>Portofolio</h1>
+  <h6>Oxumaq ucun sekle toxunun</h6>
+</div>
+
+<div class="portofolio">
+  <%Jobs.forEach((job, i) => {%>
+    <%- include('portofolio-block',{source:job.source,header:job.title,id:job._id});-%>
+  <%});%>
+</div>
+
+<%- include('footer');-%>
