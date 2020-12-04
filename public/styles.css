@@ -7,6 +7,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #e6f9ff;
+  width: 100%;
 }
 
 .margin {
@@ -29,9 +30,6 @@ body {
   border-top: 5px solid #e6f9ff;
   padding: 1rem;
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
 }
 
 .carousel-item img {
@@ -62,6 +60,10 @@ body {
   color: black;
 }
 
+.service-header {
+  margin-top: 4%;
+}
+
 .card {
   margin: 5% 1%;
 }
@@ -69,11 +71,16 @@ body {
 .card img {
   align-self: center;
   width: 15rem;
+  height: 15rem;
   margin-top: 5%;
 }
 
 .card button {
   margin: 0 2%;
+}
+
+#services {
+  margin-bottom: 20%;
 }
 
 .about {
@@ -233,6 +240,12 @@ body {
 @keyframes to-click {
   to {
     background-color: #33ccff;
+  }
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

@@ -11,13 +11,11 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   // we're connected!
 });
-
-
 const serviceSchema = new mongoose.Schema({
   title:String,
-  content:String,
   url:String,
   type:String,
+  source:String,
   id:String
 });
 const clientSchema= new mongoose.Schema({
@@ -39,7 +37,7 @@ const Client = mongoose.model('Client',clientSchema);
 const Portofolio =mongoose.model('Portofolio',portofolioSchema);
 
 app.get("/",function(req,res){
-  var foundItems=[]
+  var foundItems=[];
   Service.find(function(err,items){
     items.forEach((item, i) => {
       foundItems.push(item);
@@ -81,7 +79,7 @@ app.get("/portofolio",function(req,res){
   })
 });
 
-app.get("/:title",function(req,res){
+app.get("/portofolio/:title",function(req,res){
   const requestedTitle=req.params.title;
   Portofolio.findOne({title:requestedTitle},function(err,foundTitle){
     if (foundTitle) {
@@ -91,6 +89,20 @@ app.get("/:title",function(req,res){
     }
   })
 });
+
+app.get("/services/:cardId",function(req,res){
+  const cardId = req.params.cardId;
+  Service.findOne({_id:cardId},function(err,foundCard){
+    if (foundCard) {
+      res.render("individual-card",{title:foundCard.title,content:foundCard.content,source:foundCard.source})
+    } else if(err) {
+      console.log(err);
+    }else{
+      console.log("not found");
+    }
+  })
+})
+
 app.listen(4000,function(){
   console.log("We are live on port 4000");
 })

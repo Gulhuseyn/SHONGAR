@@ -4,39 +4,60 @@
       <div class="sidebar">
         <h1>Xidmətlərimiz</h1>
         <ul>
-          <li><a href="#">Temir</a></li>
-          <li><a href="#">Tikinti</a></li>
-          <li><a href="#">Tender verilmesi</a></li>
-          <li><a href="#">Avadanliq kirayesi</a></li>
+          <li><a href="#temir">Təmir</a></li>
+          <li><a href="#tikinti">Tikinti</a></li>
+          <li><a href="#work">Xidmətlər</a></li>
+          <li><a href="#sell">Alqı-satqı</a></li>
+          <li><a href="#services">Digər Servislər</a></li>
         </ul>
       </div>
     </div>
     <div class="col-lg-9">
       <div id="temir">
-        <div class="row"><div class="col"><h1>Temir</h1></div></div>
+        <div class="row"><div class="col service-header"><h1>Təmir</h1></div></div>
           <div class="row">
-            <%Items.forEach((item, i) => {%>
-              <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+            <%const temirArray=Items.filter(item=>item.type==="temir")%>
+            <%temirArray.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,source:item.source,id:item._id}); -%>
             <%});%>
           </div>
       </div>
       <div id="tikinti">
-        <div class="row"><div class="col"><h1>Tikinti</h1></div></div>
+        <div class="row"><div class="col service-header"><h1>Tikinti</h1></div></div>
           <div class="row">
-            <%Items.forEach((item, i) => {%>
-              <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+            <%const tikintiArray=Items.filter(item=>item.type==="tikinti")%>
+            <%tikintiArray.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,source:item.source,id:item._id}); -%>
             <%});%>
           </div>
       </div>
-      <div id="tender">
-        <div class="row"><div class="col"><h1>Tender</h1></div></div>
+      <div id="work">
+        <div class="row"><div class="col service-header"><h1>Xidmətlər</h1></div></div>
           <div class="row">
-            <%Items.forEach((item, i) => {%>
-              <%- include('card',{title:item.title,content:item.content,id:item._id}); -%>
+            <%const workArray=Items.filter(item=>item.type==="work")%>
+            <%workArray.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,source:item.source,id:item._id}); -%>
             <%});%>
           </div>
       </div>
-
+      <div id="sell">
+        <div class="row"><div class="col service-header"><h1>Alqı-satqı</h1></div></div>
+          <div class="row">
+            <%const sellArray=Items.filter(item=>item.type==="sell")%>
+            <%sellArray.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,source:item.source,id:item._id}); -%>
+            <%});%>
+          </div>
+      </div>
+      <div id="services">
+        <div class="row"><div class="col service-header"><h1>Digər servislər</h1></div></div>
+          <div class="row">
+            <%const servicesArray=Items.filter(item=>item.type==="service")%>
+            <%servicesArray.forEach((item, i) => {%>
+              <%- include('card',{title:item.title,source:item.source,id:item._id}); -%>
+            <%});%>
+          </div>
+      </div>
     </div>
   </div>
 
