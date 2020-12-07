@@ -13,6 +13,7 @@ db.once('open', function() {
 });
 const serviceSchema = new mongoose.Schema({
   title:String,
+  content:String,
   url:String,
   type:String,
   source:String,

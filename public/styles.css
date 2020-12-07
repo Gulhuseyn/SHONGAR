@@ -1,5 +1,14 @@
 nav {
   background-color: #33ccff;
+  z-index: 6;
+  border-bottom: 0.25rem solid #e6f9ff;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  transition: top 0.3s;
 }
 
 body {
@@ -32,7 +41,61 @@ body {
   width: 100%;
 }
 
-.carousel-item img {
+.svg-animation {
+  width: 100%;
+  background-color: #e6f9ff;
+  animation: disappear 1s ease forwards 4s;
+}
+
+#logo {
+  margin: 5% 5% 0 5%;
+  width: 90%;
+  animation: fill 1s ease forwards 3s, disappear 1s ease forwards 4s;
+}
+
+#logo path:nth-child(1) {
+  stroke-dasharray: 508.9268798828125px;
+  stroke-dashoffset: 508.9268798828125px;
+  animation: line-anim 2s ease forwards;
+}
+
+#logo path:nth-child(2) {
+  stroke-dasharray: 550.367919921875px;
+  stroke-dashoffset: 550.367919921875px;
+  animation: line-anim 2s ease forwards 0.3s;
+}
+
+#logo path:nth-child(3) {
+  stroke-dasharray: 560.095458984375px;
+  stroke-dashoffset: 560.095458984375px;
+  animation: line-anim 2s ease forwards 0.6s;
+}
+
+#logo path:nth-child(4) {
+  stroke-dasharray: 582.130615234375px;
+  stroke-dashoffset: 582.130615234375px;
+  animation: line-anim 2s ease forwards 0.9s;
+}
+
+#logo path:nth-child(5) {
+  stroke-dasharray: 527.9555053710938px;
+  stroke-dashoffset: 527.9555053710938px;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+
+#logo path:nth-child(6) {
+  stroke-dasharray: 513.4044189453125px;
+  stroke-dashoffset: 513.4044189453125px;
+  animation: line-anim 2s ease forwards 1.5s;
+}
+
+#logo path:nth-child(7) {
+  stroke-dasharray: 574.6138305664062px;
+  stroke-dashoffset: 574.6138305664062px;
+  animation: line-anim 2s ease forwards 1.8s;
+}
+
+.carousel-item img, .job-block img {
   width: 100%;
 }
 
@@ -68,7 +131,15 @@ body {
   margin: 5% 1%;
 }
 
-.card img {
+.main-card:hover {
+  box-shadow: 1px 1px 5px;
+}
+
+.main-card:hover.main-card img {
+  animation: img-zoom 1s ease forwards;
+}
+
+.main-card img {
   align-self: center;
   width: 15rem;
   height: 15rem;
@@ -149,15 +220,7 @@ body {
   box-shadow: 1px 1px 3px #33ccff;
 }
 
-.we-contact-block h1 {
-  text-align: center;
-}
-
-.contact-block {
-  text-align: center;
-}
-
-.arrow {
+.contact-block, .arrow, .we-contact-block h1 {
   text-align: center;
 }
 
@@ -217,17 +280,9 @@ body {
   margin: 5% 12%;
 }
 
-.job-block img {
-  width: 100%;
-}
-
-@keyframes opacity {
-  from {
-    opacity: 1;
-  }
-
+@keyframes img-zoom {
   to {
-    opacity: 0.3;
+    transform: scale(1.1);
   }
 }
 
@@ -249,10 +304,20 @@ body {
   }
 }
 
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: #33ccff;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .sidebar {
     position: sticky;
-    top: 10%;
+    top: 15%;
     left: 0;
   }
 
