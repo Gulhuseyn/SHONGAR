@@ -5,20 +5,19 @@ const app=express();
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb://localhost/shongarDB', { useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-});
+mongoose.connect('mongodb://localhost/shongarDB', {useNewUrlParser: true});
+
 const serviceSchema = new mongoose.Schema({
   title:String,
   content:String,
-  url:String,
+  large:String,
+  subContent:Array,
+  listContent:Array,
   type:String,
   source:String,
   id:String
 });
+
 const clientSchema= new mongoose.Schema({
   name:String,
   surname:String,
@@ -95,7 +94,7 @@ app.get("/services/:cardId",function(req,res){
   const cardId = req.params.cardId;
   Service.findOne({_id:cardId},function(err,foundCard){
     if (foundCard) {
-      res.render("individual-card",{title:foundCard.title,content:foundCard.content,source:foundCard.source})
+      res.render("individual-card",{title:foundCard.title,content:foundCard.content,subContent:foundCard.subContent,listContent:foundCard.listContent,source:foundCard.source,large:foundCard.large})
     } else if(err) {
       console.log(err);
     }else{

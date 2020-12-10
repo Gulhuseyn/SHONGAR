@@ -1,8 +1,26 @@
 <%- include('header');-%>
-<img src="/images/card-images/<%=source%>" alt="">
 <div class="individual">
-  <h1><%=title%></h1>
-  <p><%=content%></p>
+  <img src="/images/type-images/<%=large%>" alt="">
+  <div class="individual-content">
+    <h1><%=title%></h1>
+    <p><%=content%></p>
+    <div class="sub-content">
+        <%subContent.forEach(function(point){%>
+          <h4><%=point.title%></h4>
+          <p><%=point.content%></p>
+        <%})%>
+    </div>
+    <div class="list-content">
+      <ul>
+        <%listContent.forEach(function(item){%>
+          <li><%=item%></li>
+        <%})%>
+      </ul>
+
+    </div>
+    <a href="/contact"  class="btn btn-primary btn-lg">Daha çox məlumat üçün bizə yazın</a>
+  </div>
+
 </div>
 
 <%- include('footer');-%>
