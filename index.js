@@ -105,6 +105,6 @@ app.get("/services/:cardId",function(req,res){
   })
 })
 
-app.listen(4000,function(){
+app.listen(process.env.PORT ||4000,function(){
   console.log("We are live on port 4000");
 })
