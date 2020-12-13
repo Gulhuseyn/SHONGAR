@@ -36,8 +36,6 @@ content:String
 const Service = mongoose.model('Service', serviceSchema);
 const Client = mongoose.model('Client',clientSchema);
 const Portofolio =mongoose.model('Portofolio',portofolioSchema);
-const a= new Service({title:"Test"});
-a.save();
 app.get("/",function(req,res){
   var foundItems=[];
   Service.find(function(err,items){

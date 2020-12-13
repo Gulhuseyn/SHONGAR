@@ -11,6 +11,15 @@ nav {
   transition: top 0.3s;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -57,7 +66,7 @@ body {
   position: relative;
 }
 
-.individual img {
+.carousel-item img, .job-block img, .individual img {
   width: 100%;
 }
 
@@ -124,10 +133,6 @@ body {
   animation: line-anim 2s ease forwards 1.8s;
 }
 
-.carousel-item img, .job-block img {
-  width: 100%;
-}
-
 .aside {
   background-color: #33ccff;
   padding: 0.5rem;
@@ -168,6 +173,10 @@ body {
   animation: img-zoom 1s ease forwards;
 }
 
+.main-card a {
+  padding-left: 1.25rem;
+}
+
 .main-card img {
   align-self: center;
   width: 15rem;
@@ -185,7 +194,6 @@ body {
 
 .about {
   background: linear-gradient(to bottom, #33ccff 0%, #e6f9ff 100%);
-  height: 100vh;
 }
 
 .about-header, .description {
@@ -197,6 +205,23 @@ body {
   line-height: 1.5;
   font-size: 1.5rem;
   margin: 1% 2%;
+}
+
+.about-list {
+  line-height: 3;
+  text-align: center;
+}
+
+.about-list li {
+  list-style-type: square;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.about-content {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .about-card {
@@ -218,11 +243,6 @@ body {
   border-radius: 100%;
 }
 
-.about-content {
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
 .companies-header, .workers-header {
   color: #000;
   text-align: center;
@@ -231,8 +251,7 @@ body {
 
 .company-image {
   width: 100%;
-  max-width: 12.5rem;
-  height: 9.37rem;
+  height: 12.5rem;
 }
 
 .contact-block, .we-contact-block {
@@ -297,18 +316,6 @@ body {
 
 .job-block {
   margin: 5% 12%;
-}
-
-@keyframes transition-1 {
-  to {
-    left: 0;
-  }
-}
-
-@keyframes transition-2 {
-  to {
-    left: -120%;
-  }
 }
 
 @keyframes opacity {
