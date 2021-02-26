@@ -5,7 +5,8 @@ const app=express();
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb://localhost/shongarDB', {useNewUrlParser: true});
+const URI= "mongodb+srv://Gulhuseyn:19992001@cluster0.ve8uq.mongodb.net/shongarDB?retryWrites=true&w=majority";
+mongoose.connect(URI, {useNewUrlParser: true,useUnifiedTopology: true});
 
 const serviceSchema = new mongoose.Schema({
   title:String,
@@ -35,7 +36,6 @@ content:String
 const Service = mongoose.model('Service', serviceSchema);
 const Client = mongoose.model('Client',clientSchema);
 const Portofolio =mongoose.model('Portofolio',portofolioSchema);
-
 app.get("/",function(req,res){
   var foundItems=[];
   Service.find(function(err,items){
@@ -103,6 +103,6 @@ app.get("/services/:cardId",function(req,res){
   })
 })
 
-app.listen(4000,function(){
+app.listen(process.env.PORT ||4000,function(){
   console.log("We are live on port 4000");
 })
