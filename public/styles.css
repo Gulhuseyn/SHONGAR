@@ -18,6 +18,7 @@ nav {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -66,7 +67,9 @@ body {
   position: relative;
 }
 
-.carousel-item img, .job-block img, .individual img {
+.carousel-item img,
+.job-block img,
+.individual img {
   width: 100%;
 }
 
@@ -196,7 +199,8 @@ body {
   background: linear-gradient(to bottom, #33ccff 0%, #e6f9ff 100%);
 }
 
-.about-header, .description {
+.about-header,
+.description {
   text-align: center;
   color: white;
 }
@@ -243,7 +247,8 @@ body {
   border-radius: 100%;
 }
 
-.companies-header, .workers-header {
+.companies-header,
+.workers-header {
   color: #000;
   text-align: center;
   margin: 5% 0;
@@ -254,7 +259,8 @@ body {
   height: 12.5rem;
 }
 
-.contact-block, .we-contact-block {
+.contact-block,
+.we-contact-block {
   background-color: white;
   border-radius: 2rem;
   margin: 6% 15%;
@@ -262,7 +268,11 @@ body {
   box-shadow: 1px 1px 3px #33ccff;
 }
 
-.contact-block, .arrow, .company-title, .we-contact-block h1, .individual-content h1 {
+.contact-block,
+.arrow,
+.company-title,
+.we-contact-block h1,
+.individual-content h1 {
   text-align: center;
 }
 
@@ -317,10 +327,29 @@ body {
 .job-block {
   margin: 5% 12%;
 }
+.dashboard-container {
+  min-height: 100vh;
+  margin: 5% 15%;
+}
 
+.stats {
+  padding: 5%;
+  background-color: #33ccff;
+  margin: 1%;
+  text-align: center;
+  min-width: 10rem;
+}
+.clients {
+  margin: 5% 0%;
+}
+.client {
+  margin: 3% 0%;
+  background-color: #33ccff;
+  padding: 1%;
+}
 @keyframes opacity {
   to {
-    opacity: 0.3
+    opacity: 0.3;
   }
 }
 
@@ -358,7 +387,11 @@ body {
     top: 15%;
     left: 0;
   }
-
+  .dashboard {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+  }
   .card {
     margin: 3% 1%;
   }
@@ -388,7 +421,8 @@ body {
     width: 80%;
   }
 
-  .individual-content p, .individual-content li {
+  .individual-content p,
+  .individual-content li {
     font-size: 1.2rem;
     font-weight: bolder;
     color: black;
