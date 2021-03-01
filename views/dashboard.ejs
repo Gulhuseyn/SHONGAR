@@ -1,0 +1,25 @@
+<%- include('header');-%>
+<div class="dashboard-container">
+<div class="dashboard">
+    <!-- <div class="stats"><h3>29 dəfə</h3> Bu gün</div>
+    <div class="stats"><h3>45 dəfə</h3> Bu həftə</div>
+    <div class="stats"><h3>109 dəfə</h3>Bu ay</div> -->
+</div>
+<h1>Ümumi:<%= total %> nəfər. </h1>
+<div class="clients">
+  <h1>Müştərilər:</h1>
+<%Clients.forEach((client, i) => {%>
+  
+    <div class="client">
+   <h3>Ad: <%= client.name %></h3>
+   <p>Email: <%= client.email %></p>
+   <p>Mobil: <%= client.phone %></p>
+   <p>Nə etməli: <%= client.radio %></p>
+   <p>Maraqlandığı mövzu: <%= client.text %></p>
+  </div>
+
+
+  <%});%>
+</div>
+</div>
+<%- include('footer'); -%>
